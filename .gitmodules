@@ -1,0 +1,9 @@
+[submodule "submodules/SmartFactory"]
+	path = submodules/SmartFactory
+	url = git://github.com/mbotos/SmartFactory-for-Force.com.git
+[submodule "submodules/ApexLimitUtil"]
+	path = submodules/ApexLimitUtil
+	url = git@github.com:fractastical/ApexLimitUtil.git
+[submodule "submodules/ApexTestUtil"]
+	path = submodules/ApexTestUtil
+	url = git@github.com:fractastical/ApexTestUtil.git
