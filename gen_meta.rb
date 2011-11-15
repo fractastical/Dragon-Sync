@@ -18,7 +18,7 @@ class Gen_Meta
             end
             if counter==0 
                puts "No files found without metadata."
-             end
+            end
 
       
 
