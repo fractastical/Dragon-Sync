@@ -7,3 +7,6 @@
 [submodule "submodules/ApexTestUtil"]
 	path = submodules/ApexTestUtil
 	url = git@github.com:fractastical/ApexTestUtil.git
+[submodule "submodules/ApexCommonsStringUtils"]
+	path = submodules/ApexCommonsStringUtils
+	url = git@github.com:fractastical/StringUtils.git

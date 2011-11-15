@@ -6,4 +6,4 @@ git submodule add $1 submodules/$2
 echo "adding..."
 git submodule update
 echo "updating..."
-echo $1 >> SUBMODPATHS 
+echo $2 >> SUBMODPATHS 
