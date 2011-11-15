@@ -3,15 +3,15 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "Removing previous files"
-rm $DIR/src/classes/*
+rm -r $DIR/src/classes/*
 echo "Updating all submodules"
 # Not sure that this line is necessary
 git submodule update
 
-while read p    
+while read sm    
 do    
-	echo "updating from $p"
-	cd submodules/$p
+	echo "updating from $sm"
+	cd submodules/$sm
 	git checkout master
 	git pull
 	cp -R * $DIR/src/classes
