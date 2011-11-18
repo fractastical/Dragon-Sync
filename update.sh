@@ -17,6 +17,8 @@ do
 	cp -R * $DIR/src/classes
 	cd $DIR
 done <SUBMODPATHS
+rm README
 ruby gen_meta.rb
+ruby zip_resources.rb
 
 
