@@ -6,6 +6,6 @@ do
 	echo $p
 	cp -apRf $DIR/src/classes/* $p
 	cp -apRf $DIR/src/resources/* $p
-	
+
 	
 done <PROJECTPATHS
