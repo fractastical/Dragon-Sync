@@ -1,0 +1,57 @@
+Dragon Breath
+
+Dragon Breath is a command line tool to import class libraries stored in git repositories and use them for multiple (Force.com) projects.
+
+Basic functionality is as follows:
+
+bash add.sh project_repo_address project_folder
+
+This adds a project to your app as a git submodule.  For example, you might do:
+
+bash add.sh git@github.com:apex-commons/StringUtils.git ApexCommonsStringUtils
+
+This adds the submodule to your git repository in the folder submodules/ApexCommonsStringUtils. It also adds an entry to the SUBMODPATHS file. If you don’t want to use all of files in the repository you can change the path in this file. 
+
+The next step is to update:
+
+bash update.sh
+
+This updates each submodule to the master, copies the files so they are ready for deployment, and (via a ruby script) generates any missing meta xml files. This allows you to keep chunky xml files outside of your repositories if you want.
+
+To export you must update entries in the PROJECTPATHS file. For the moment, all you need to do is:
+
+Now you are ready to export:
+
+	bash export.sh
+
+That’s all. All of the files will now be in your project path and ready for deployment. 
+
+Note: at some point in the near future I also plan to support non-class files (e.g. Static Resources, Visualforce components, etc.) and eventually packaging, namespacing, running tests, and deployment. I have a Ruby library already supports many of these things but it is not as robust as I need to use for everyday deployment. 
+
+
+Here is what I include as a part of each deployment:
+
+Classes
+    TestUtils - Utility for easily generating TestUsers 
+    LimitUtils - Utility for dealing Limits in Salesforce
+    StringUtils (imported from Apex Commons)
+    ListUtils (imported from Apex Commons)
+    HTTPUtils (imported from Apex Commons)
+    SmartFactory (imported from Botoscloud) 
+
+Static Resources
+   jQueryUI, including jQuery min
+   Blueprint CSS framework
+   Additional jquery Validation scripts
+   CircleIcon set
+
+Additional Notes
+
+This package is maintained in the developer org. Each imported resource is maintained as a git submodule. In the case of SmartFactory, the submodule is the repo maintained by Matthew Botos. In the case of Apex-Commons, it is a separate git repo in which changes to unused files are ignored (at some point I may separate all of Apex Commons into separate modules).
+
+
+
+
+
+
+
